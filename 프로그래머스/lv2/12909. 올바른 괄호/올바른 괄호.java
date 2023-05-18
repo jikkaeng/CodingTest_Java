@@ -3,14 +3,14 @@ class Solution {
     boolean solution(String s) {
         boolean answer = true;
         int cnt=0;
-        Stack<String> stack =new Stack<>();
+        Stack<Character> stack =new Stack<>();
         
         if(s.charAt(0)==')')return false;
         else{
             for(int i=0;i<s.length();i++){
                 if(s.charAt(i)=='(')
                 {
-                    stack.push(String.valueOf(s.charAt(i)));
+                    stack.push(s.charAt(i));
                 }
                 else if(s.charAt(i)==')'){
                     if(stack.empty())return false;
