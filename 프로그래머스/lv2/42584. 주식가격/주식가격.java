@@ -3,23 +3,20 @@ class Solution {
     public int[] solution(int[] prices) {
         int[] answer = new int[prices.length];
         Stack<Integer> stack=new Stack<>();
-        
-        for(int i=0;i<prices.length;i++){
+
+        for(int i=0;i<prices.length-1;i++){
             stack.push(prices[i]);
-            int cnt=0;
             for(int j=i+1;j<prices.length;j++){
                 if(prices[i]>prices[j]){
-                    cnt++;
-                    answer[i]=cnt;
-                    stack.clear();
+                    stack.push(prices[j]);
                     break;
                 }
-                else{
-                    stack.push(prices[j]);
-                    cnt++;
-                }
-            }answer[i]=cnt;
+                else stack.push(prices[j]);
+            }
+            answer[i]=stack.size()-1;
+            stack.clear();
         }
+        answer[prices.length-1]=0;
         return answer;
     }
 }
