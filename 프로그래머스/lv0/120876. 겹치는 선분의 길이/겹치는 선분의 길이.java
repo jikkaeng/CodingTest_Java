@@ -11,25 +11,10 @@ class Solution {
 	        if(max<0)cnt=(-min)+max;
 	        else cnt=max-min;
 	        int[] arr=new int[cnt];
-	        // if(min<0) {
-	        // 	min=-min;
-	        // 	for(int i=0;i<3;i++){
-	        // for(int j=lines[i][0];j<lines[i][1];j++){
-	        // arr[j+min]+=1;
-	        // }
-	        // }
-	        // }
-	        // else {
-	        // 	for(int i=0;i<3;i++){
-	        // for(int j=lines[i][0];j<lines[i][1];j++){
-	        // arr[j-min]+=1;
-	        // }
-	        // }
-	        // }
             for(int i=0;i<3;i++){
-		            for(int j=lines[i][0];j<lines[i][1];j++){
-		                arr[j-min]+=1;
-		            }
+		        for(int j=lines[i][0];j<lines[i][1];j++){
+		            arr[j-min]+=1;
+		        }
 		    }
 	        for(int i:arr){
 	            if(i>=2)answer+=1;
