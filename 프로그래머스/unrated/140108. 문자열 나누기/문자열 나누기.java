@@ -16,7 +16,6 @@ class Solution {
                 next=0;
             }
         }
-        //if(answer==0)answer=1;
         return answer;
     }
 }
